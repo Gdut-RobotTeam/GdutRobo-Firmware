@@ -26,3 +26,12 @@ gdutrobo_firmware\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_
 gdutrobo_firmware\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 gdutrobo_firmware\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 gdutrobo_firmware\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Inc/FreeRTOSConfig.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

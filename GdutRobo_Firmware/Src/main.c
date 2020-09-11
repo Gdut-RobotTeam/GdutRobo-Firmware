@@ -21,12 +21,16 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "dma.h"
 #include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "bsp_buzzer.h"
+#include "bsp_led.h"
+#include "bsp_servo_iic.h"
+#include "bsp_delay.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -91,24 +95,35 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
+  MX_UART4_Init();
+  MX_UART5_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+	pca_init(50,90);
+	delay_init();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
-  MX_FREERTOS_Init(); 
+  //MX_FREERTOS_Init(); 
 
   /* Start scheduler */
-  osKernelStart();
+  //osKernelStart();
   
   /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //uint8_t Senbuff[]="\r\n****** Serial Output Message by DMA ****\r\n";
   while (1)
   {
+	//HAL_UART_Transmit_DMA(&huart1,(uint8_t*)Senbuff,sizeof(Senbuff));
+	  angle_write(15,0);
+	  delay_ms(1000);
+	  angle_write(15,90);
+	  delay_ms(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
