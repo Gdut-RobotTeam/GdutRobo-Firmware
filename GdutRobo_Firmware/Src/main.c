@@ -27,6 +27,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "string.h"
+#include "bsp_imu.h"
 #include "bsp_buzzer.h"
 #include "bsp_led.h"
 #include "bsp_servo_iic.h"
@@ -64,6 +66,11 @@ void MX_FREERTOS_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+
+void DMA_Usart1_Read(uint8_t *Data,uint8_t len)//串口接收封装
+{
+	HAL_UART_Receive_DMA(&huart1,Data,len);//重新打开DMA接收
+}
 /* USER CODE END 0 */
 
 /**
@@ -102,8 +109,9 @@ int main(void)
   MX_UART5_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-	pca_init(50,90);
 	delay_init();
+	pca_init(50,90);
+	imu_receive_init();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -116,16 +124,10 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //uint8_t Senbuff[]="\r\n****** Serial Output Message by DMA ****\r\n";
   while (1)
   {
-	//HAL_UART_Transmit_DMA(&huart1,(uint8_t*)Senbuff,sizeof(Senbuff));
-	  angle_write(15,0);
-	  delay_ms(1000);
-	  angle_write(15,90);
-	  delay_ms(1000);
     /* USER CODE END WHILE */
-
+	
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

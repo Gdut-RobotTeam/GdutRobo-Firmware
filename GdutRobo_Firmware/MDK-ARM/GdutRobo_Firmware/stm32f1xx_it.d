@@ -35,3 +35,5 @@ gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/por
 gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 gdutrobo_firmware\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+gdutrobo_firmware\stm32f1xx_it.o: ../Inc/usart.h
+gdutrobo_firmware\stm32f1xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

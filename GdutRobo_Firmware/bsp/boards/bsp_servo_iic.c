@@ -2,6 +2,30 @@
 #include "main.h"
 #include "math.h"
 
+//GPIO simulate IIC
+#define READ_SDA() HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)
+#define SDA_HIGH() HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_SET)
+#define SDA_LOW()  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_0,GPIO_PIN_RESET)
+#define SCL_HIGH() HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_SET)
+#define SCL_LOW()  HAL_GPIO_WritePin(GPIOB,GPIO_PIN_2,GPIO_PIN_RESET)
+#define SDA_IN()  {GPIOB->CRL&=0XFFFFFFF0;GPIOB->CRL|=(uint32_t)8;} 
+#define SDA_OUT() {GPIOB->CRL&=0XFFFFFFF0;GPIOB->CRL|=(uint32_t)3;}
+
+//IIC operating function			 
+void iic_start(void);				
+void iic_stop(void);	  			
+void iic_send_byte(uint8_t txd);			
+void iic_ack(void);					
+void iic_not_ack(void);
+uint8_t iic_wait_ack(void); 
+uint8_t iic_read_byte(unsigned char ack);
+
+//pca9685
+void pca_write(uint8_t adrr,uint8_t data);
+uint8_t pca_read(uint8_t adrr);
+void pca_setfreq(float freq);
+void pca_setpwm(uint8_t num, uint32_t on, uint32_t off);
+
 void iic_start(void)
 {
 	SDA_OUT();     

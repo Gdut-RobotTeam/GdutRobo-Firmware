@@ -41,9 +41,12 @@ gdutrobo_firmware\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/sem
 gdutrobo_firmware\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 gdutrobo_firmware\main.o: ../Inc/dma.h
 gdutrobo_firmware\main.o: ../Inc/usart.h
+gdutrobo_firmware\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 gdutrobo_firmware\main.o: ../Inc/gpio.h
-gdutrobo_firmware\main.o: ..\bsp\boards\bsp_buzzer.h
+gdutrobo_firmware\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+gdutrobo_firmware\main.o: ..\bsp\boards\bsp_imu.h
 gdutrobo_firmware\main.o: ..\application\struct_typedef.h
+gdutrobo_firmware\main.o: ..\bsp\boards\bsp_buzzer.h
 gdutrobo_firmware\main.o: ..\bsp\boards\bsp_led.h
 gdutrobo_firmware\main.o: ..\bsp\boards\bsp_servo_iic.h
 gdutrobo_firmware\main.o: ..\bsp\boards\bsp_delay.h
