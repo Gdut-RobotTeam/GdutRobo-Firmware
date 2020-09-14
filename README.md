@@ -9,5 +9,3 @@ bsp：万用板板载设备适配包
 components：通用机器人模块，包括命令行，驱动模块和系统组件
 
 doc：万用板原理图和HAL库文档
-
-MDK-ARM：armcc工具链
