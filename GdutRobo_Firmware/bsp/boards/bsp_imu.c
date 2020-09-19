@@ -1,5 +1,6 @@
 #include "bsp_imu.h"
 #include "main.h"
+#include "stdio.h"
 
 extern UART_HandleTypeDef huart3;
 extern DMA_HandleTypeDef hdma_usart3_rx;

@@ -206,10 +206,25 @@ void pca_setpwm(uint8_t num, uint32_t on, uint32_t off)
   */
 void pca_init(float hz,uint8_t angle)
 {
+	uint8_t i = 0;
+	SCL_HIGH();
+	HAL_Delay(500);
+	
+	
+	/*while (1) {
+		iic_start();
+		iic_send_byte(i);
+		iic_wait_ack();
+		iic_stop();
+		HAL_Delay(10);
+		i += 2;
+	}*/
+	
+	
 	pca_write(pca_mode1,0x0);
 	pca_setfreq(hz);
-	
 	HAL_Delay(500);
+	//delay_ms(500);
 }
 
 /**
