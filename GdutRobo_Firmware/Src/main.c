@@ -33,6 +33,7 @@
 #include "bsp_led.h"
 #include "bsp_servo_iic.h"
 #include "bsp_delay.h"
+#include "bsp_motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -114,7 +115,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	delay_init();
 	pca_init(50,90);
+	Motor_PWM_Enable();
 	imu_receive_init();
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -124,18 +127,18 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  buzzer_on();
-	  for(int num = 0; num <= 15; num++)
-	  {
-		angle_write(num,90);
-	  } 
-	  delay_ms(1000);
-	  for(int num = 0; num <= 15; num++)
-	  {
-		angle_write(num,0);
-	  } 
-	  buzzer_off();
-	  delay_ms(1000);
+//	  buzzer_on();
+//	  for(int num = 0; num <= 15; num++)
+//	  {
+//		angle_write(num,90);
+//	  } 
+//	  delay_ms(1000);
+//	  for(int num = 0; num <= 15; num++)
+//	  {
+//		angle_write(num,0);
+//	  } 
+//	  buzzer_off();
+//	  delay_ms(1000);
   }
   /* USER CODE END 3 */
 }
