@@ -55,7 +55,7 @@ void USART3_IRQHandler(void)
 					imu.yaw = 180.0*(short)((imu_rx_buf[29]<<8)|imu_rx_buf[28])/32768.0;
 					if(imu.yaw>360) imu.yaw -= 360;
 					else if(imu.yaw<0) imu.yaw += 360;
-					printf("imu :%f  %f  %f\r\n",imu.roll,imu.pitch,imu.yaw);
+					//printf("imu :%f  %f  %f\r\n",imu.roll,imu.pitch,imu.yaw);
 				}
 			}
 		}

@@ -66,11 +66,6 @@ void MX_FREERTOS_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-
-void DMA_Usart1_Read(uint8_t *Data,uint8_t len)//串口接收封装
-{
-	HAL_UART_Receive_DMA(&huart1,Data,len);//重新打开DMA接收
-}
 /* USER CODE END 0 */
 
 /**
