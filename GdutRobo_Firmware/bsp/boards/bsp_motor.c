@@ -3,7 +3,7 @@
 #include "tim.h"
 
 //使能定时器PWM通道
-void Motor_PWM_Enable(void)
+void motor_pwm_enable(void)
 {
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -17,7 +17,7 @@ void Motor_PWM_Enable(void)
 }
 
 
-void Motor_Set_PWM(uint8_t motor, int32_t pid_out)
+void motor_set_pwm(uint8_t motor, int32_t pid_out)
 {
 	int32_t ccr = 0;
 	
@@ -62,7 +62,7 @@ void Motor_Set_PWM(uint8_t motor, int32_t pid_out)
 入口参数：定时器
 返回  值：速度值
 **************************************************************************/
-int Read_Encoder(uint8_t TIMX)
+int read_encoder(uint8_t TIMX)
 {
 	int Encoder_TIM;    
 	switch(TIMX)

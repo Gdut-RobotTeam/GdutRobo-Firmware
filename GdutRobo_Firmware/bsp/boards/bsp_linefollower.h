@@ -21,12 +21,12 @@ extern struct Line_Grays rigth_LFB;
 void LFB_receive_init(void);
 
 //向地址为1的循迹板发送查询指令
-void LFB_ID1_Send(void);
+void LFB_id1_send(void);
 
 #ifdef LINE_FOLLOWER_ID2_ENABLE
 //向地址为2的循迹板发送查询指令
 //该函数在接收处理地址为1的循迹板的数据后会被自动调用
-void LFB_ID2_Send(void);
+void LFB_id2_send(void);
 #endif
 
 #endif

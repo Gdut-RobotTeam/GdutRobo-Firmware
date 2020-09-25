@@ -3,7 +3,7 @@
 #include "tim.h"
 
 //测试代码////////////////////////////////////////////////
-void LFB_Decode(struct Line_Grays *data, uint8_t *buffer, float *weight);
+void LFB_decode(struct Line_Grays *data, uint8_t *buffer, float *weight);
 
 float weight1[10] = {-5,-4,-3,-2,-0.5,0.5,2,3,4,5};
 struct Line_Grays left_LFB;
@@ -31,7 +31,7 @@ void LFB_receive_init(void)
 
 
 //向地址为1的循迹板发送查询指令
-void LFB_ID1_Send(void)
+void LFB_id1_send(void)
 {
 	uint8_t getlinecom[]={0xff,0xff,0x01,0x02,0x08,0x0b};  //ID:0X01
 	HAL_UART_Transmit(&huart4, getlinecom, 6, 0XFF);
@@ -40,7 +40,7 @@ void LFB_ID1_Send(void)
 #ifdef LINE_FOLLOWER_ID2_ENABLE
 //向地址为2的循迹板发送查询指令
 //该函数在接收处理地址为1的循迹板的数据后会被自动调用
-void LFB_ID2_Send(void)
+void LFB_id2_send(void)
 {
 	uint8_t getlinecom[]={0xff,0xff,0x02,0x02,0x08,0x0c};  //ID:0X02
 	HAL_UART_Transmit(&huart4, getlinecom, 6, 0XFF);
@@ -68,13 +68,13 @@ void UART4_IRQHandler(void)
 				{
 					if (RxBuffer[0]==0x01)
 					{
-						LFB_Decode(&left_LFB, RxBuffer, weight1);
+						LFB_decode(&left_LFB, RxBuffer, weight1);
 						id2 = 1;  //查询ID2循迹板
 					}
 					#ifdef LINE_FOLLOWER_ID2_ENABLE
 					else if (RxBuffer[0]==0x02)
 					{
-						LFB_Decode(&rigth_LFB, RxBuffer, weight1);
+						LFB_decode(&rigth_LFB, RxBuffer, weight1);
 					}
 					#endif
 				}
@@ -95,7 +95,7 @@ void UART4_IRQHandler(void)
 		#ifdef LINE_FOLLOWER_ID2_ENABLE
 		if (state==0 && id2==1)
 		{
-			LFB_ID2_Send();
+			LFB_id2_send();
 			id2 = 0;
 		}
 		#endif
@@ -104,7 +104,7 @@ void UART4_IRQHandler(void)
 
 
 //测试函数
-void LFB_Decode(struct Line_Grays *data, uint8_t *buffer, float *weight)
+void LFB_decode(struct Line_Grays *data, uint8_t *buffer, float *weight)
 {
 	uint8_t i,a;
 	float tmp=0;
@@ -127,7 +127,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
     if (htim == (&htim6))
     {
-        LFB_ID1_Send();
+        LFB_id1_send();
     }
 }
 
