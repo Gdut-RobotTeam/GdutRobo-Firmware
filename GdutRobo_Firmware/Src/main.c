@@ -119,6 +119,8 @@ int main(void)
 	pca_init(50,90);
 	Motor_PWM_Enable();
 	imu_receive_init();
+	LFB_receive_init();
+	HAL_TIM_Base_Start_IT(&htim6);  //使能定时器6中断
 	
   /* USER CODE END 2 */
 

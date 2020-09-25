@@ -1,15 +1,14 @@
 #include "bsp_linefollower.h"
 #include "usart.h"
+#include "tim.h"
 
-//是否使用第二块循迹板进行级联
-#define LINE_FOLLOWER_ID2_ENABLE
-
-
+//测试代码////////////////////////////////////////////////
 void LFB_Decode(struct Line_Grays *data, uint8_t *buffer, float *weight);
 
 float weight1[10] = {-5,-4,-3,-2,-0.5,0.5,2,3,4,5};
 struct Line_Grays left_LFB;
 struct Line_Grays rigth_LFB;
+//////////////////////////////////////////////////////////
 
 
 // 校验和计算
@@ -22,6 +21,12 @@ static uint8_t calculate_verify(const uint8_t *data, uint8_t length)
 		verify_value += data[i];
 	
 	return (uint8_t)(verify_value & 0XFF);
+}
+
+
+void LFB_receive_init(void)
+{
+	__HAL_UART_ENABLE_IT(&huart4, UART_IT_RXNE);     //开启接收完成中断
 }
 
 
@@ -51,15 +56,11 @@ void UART4_IRQHandler(void)
 	static uint8_t data_cnt;
 	static uint8_t state;
 	
-	uint8_t test = 'c';
-	
 	if (UART4->SR & (1<<5))
 	{
 		Res = UART4->DR;
 		if(state==2)  //两个0xff已接收
 		{
-			HAL_UART_Transmit(&huart5, &test, 1, 0XFF);
-			
 			RxBuffer[data_cnt] = Res;
 			if (data_cnt >= 6)
 			{
@@ -93,7 +94,10 @@ void UART4_IRQHandler(void)
 		
 		#ifdef LINE_FOLLOWER_ID2_ENABLE
 		if (state==0 && id2==1)
+		{
 			LFB_ID2_Send();
+			id2 = 0;
+		}
 		#endif
 	}
 }
@@ -118,6 +122,14 @@ void LFB_Decode(struct Line_Grays *data, uint8_t *buffer, float *weight)
 		data->value=0;
 }
 
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+    if (htim == (&htim6))
+    {
+        LFB_ID1_Send();
+    }
+}
 
 
 
