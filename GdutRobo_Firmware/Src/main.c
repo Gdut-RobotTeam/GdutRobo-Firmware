@@ -122,6 +122,7 @@ int main(void)
 	LFB_receive_init();
 	HAL_TIM_Base_Start_IT(&htim6);  //使能定时器6中断
 	
+	
 	motor_set_pwm(4, 6000);
 	delay_ms(50);
 	motor_set_pwm(4, 3000);
@@ -150,8 +151,8 @@ int main(void)
 //	  } 
 //	  buzzer_off();
 //	  delay_ms(1000);
-	  printf("fine\r\n");
-	  delay_ms(4);
+	  printf("%d %d %d %d\r\n", read_encoder(2), read_encoder(3), read_encoder(4), read_encoder(5));
+	  delay_ms(20);
   }
   /* USER CODE END 3 */
 }
