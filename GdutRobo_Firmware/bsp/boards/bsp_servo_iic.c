@@ -208,7 +208,7 @@ void pca_init(float hz,uint8_t angle)
 {
 	uint8_t i = 0;
 	SCL_HIGH();
-	HAL_Delay(500);
+	delay_ms(500);
 	
 	
 	/*while (1) {
@@ -223,8 +223,7 @@ void pca_init(float hz,uint8_t angle)
 	
 	pca_write(pca_mode1,0x0);
 	pca_setfreq(hz);
-	HAL_Delay(500);
-	//delay_ms(500);
+	delay_ms(500);
 }
 
 /**

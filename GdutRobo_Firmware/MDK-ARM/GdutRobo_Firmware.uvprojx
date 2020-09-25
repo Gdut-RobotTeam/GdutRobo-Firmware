@@ -111,8 +111,8 @@
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
           <SimDllArguments>-REMAP</SimDllArguments>
-          <SimDlgDll>DARMSTM.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pSTM32F103RC</SimDlgDllArguments>
+          <SimDlgDll>DCM.DLL</SimDlgDll>
+          <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE,USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                     ../Drivers/STM32F1xx_HAL_Driver/Inc;                     ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;                     ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;                     ../Drivers/CMSIS/Include;                     ..\bsp\boards;                     ..\application</IncludePath>
+              <IncludePath>../Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F1xx/Include; ../Drivers/CMSIS/Include; ..\bsp\boards; ..\application; ..\algorithm</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -472,6 +472,11 @@
               <FileType>1</FileType>
               <FilePath>..\bsp\boards\bsp_motor.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_linefollower.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\bsp\boards\bsp_linefollower.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -482,6 +487,13 @@
         </Group>
         <Group>
           <GroupName>algorithm</GroupName>
+          <Files>
+            <File>
+              <FileName>pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\algorithm\pid.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>support</GroupName>

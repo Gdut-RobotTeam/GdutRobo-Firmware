@@ -377,7 +377,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 #endif
 PUTCHAR_PROTOTYPE
 {
-		HAL_UART_Transmit(&huart2 , (uint8_t *)&ch, 1, 0xFFFF);
+		HAL_UART_Transmit(&huart5 , (uint8_t *)&ch, 1, 0xFFFF);
 		return ch;
 }
 /* USER CODE END 1 */

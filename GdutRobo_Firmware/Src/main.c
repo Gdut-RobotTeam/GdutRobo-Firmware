@@ -34,6 +34,7 @@
 #include "bsp_servo_iic.h"
 #include "bsp_delay.h"
 #include "bsp_motor.h"
+#include "bsp_linefollower.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,6 +113,7 @@ int main(void)
   MX_TIM3_Init();
   MX_TIM4_Init();
   MX_TIM5_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	delay_init();
 	pca_init(50,90);
@@ -139,6 +141,8 @@ int main(void)
 //	  } 
 //	  buzzer_off();
 //	  delay_ms(1000);
+	  //printf("fine\r\n");
+	  //delay_ms(4);
   }
   /* USER CODE END 3 */
 }
