@@ -4,7 +4,7 @@
 #include "bsp_delay.h"
 				
 //pca9685
-#define pca_adrr 0x80
+#define pca_adrr 0xAA
 
 #define pca_mode1 0x0
 #define pca_pre 0xFE

@@ -20,8 +20,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
 #include "dma.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -33,6 +33,8 @@
 #include "bsp_led.h"
 #include "bsp_servo_iic.h"
 #include "bsp_delay.h"
+#include "bsp_motor.h"
+#include "bsp_linefollower.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,13 +60,19 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+
+
+//void DMA_Usart1_Read(uint8_t *Data,uint8_t len)//串口接收封装
+//{
+//	HAL_UART_Receive_DMA(&huart1,Data,len);//重新打开DMA接收
+//}
 
 /* USER CODE END 0 */
 
@@ -77,7 +85,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -102,28 +109,52 @@ int main(void)
   MX_USART3_UART_Init();
   MX_UART4_Init();
   MX_UART5_Init();
-  MX_USART1_UART_Init();
+  MX_TIM1_Init();
+  MX_TIM8_Init();
+  MX_TIM2_Init();
+  MX_TIM3_Init();
+  MX_TIM4_Init();
+  MX_TIM5_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 	delay_init();
 	pca_init(50,90);
+	motor_pwm_enable();
 	imu_receive_init();
+	LFB_receive_init();
+	HAL_TIM_Base_Start_IT(&htim6);  //使能定时器6中断
+	
+	
+	motor_set_pwm(4, 6000);
+	delay_ms(50);
+	motor_set_pwm(4, 3000);
+	motor_set_pwm(3, 2000);
+	motor_set_pwm(2, 2000);
+	motor_set_pwm(1, 2000);
+	
   /* USER CODE END 2 */
-
-  /* Call init function for freertos objects (in freertos.c) */
-  //MX_FREERTOS_Init(); 
-
-  /* Start scheduler */
-  //osKernelStart();
-  
-  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	
+
     /* USER CODE BEGIN 3 */
+//	  buzzer_on();
+//	  for(int num = 0; num <= 15; num++)
+//	  {
+//		angle_write(num,90);
+//	  } 
+//	  delay_ms(1000);
+//	  for(int num = 0; num <= 15; num++)
+//	  {
+//		angle_write(num,0);
+//	  } 
+//	  buzzer_off();
+//	  delay_ms(1000);
+	  printf("%d %d %d %d\r\n", read_encoder(2), read_encoder(3), read_encoder(4), read_encoder(5));
+	  delay_ms(20);
   }
   /* USER CODE END 3 */
 }
@@ -137,7 +168,7 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -150,7 +181,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks 
+  /** Initializes the CPU, AHB and APB busses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -190,7 +221,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{ 
+{
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
