@@ -68,7 +68,11 @@ void chassis_ctrl_loop() {
   chassis.motor_[1].encoder_ = read_encoder(3);
   chassis.motor_[2].encoder_ = read_encoder(4);
   chassis.motor_[3].encoder_ = read_encoder(5);
-
+  printf("%d,%d,%d,%d\r\n",
+         chassis.motor_[0].encoder_,
+         chassis.motor_[1].encoder_,
+         chassis.motor_[2].encoder_,
+         chassis.motor_[3].encoder_);
 
   float current_x_speed = (chassis.motor_[1].encoder_ - chassis.motor_[0].encoder_) * 1.4142;
   float current_y_speed = (chassis.motor_[3].encoder_ - chassis.motor_[2].encoder_) * 1.4142;

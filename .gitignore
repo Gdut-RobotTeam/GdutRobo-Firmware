@@ -25,3 +25,4 @@ JLinkLog.txt
 *.Administrator
 *.uvopt
 .idea/
+cmake-build-debug/

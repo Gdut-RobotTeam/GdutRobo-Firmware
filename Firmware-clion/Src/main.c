@@ -142,7 +142,6 @@ int main(void) {
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   chassis_speed_set(10000, 0, 0);
-  int num = -1;
   while (1) {
     /* USER CODE END WHILE */
 
