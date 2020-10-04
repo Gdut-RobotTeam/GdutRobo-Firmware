@@ -3,8 +3,6 @@
 //
 
 #include "bsp_servo_iic.h"
-#include "main.h"
-#include "math.h"
 
 //GPIO simulate IIC
 #define READ_SDA() HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_0)
@@ -196,21 +194,6 @@ void pca_setpwm(uint8_t num, uint32_t on, uint32_t off) {
   * @retval         none
   */
 void pca_init(float hz, uint8_t angle) {
-  uint8_t i = 0;
-  SCL_HIGH();
-  delay_ms(500);
-
-
-  /*while (1) {
-      iic_start();
-      iic_send_byte(i);
-      iic_wait_ack();
-      iic_stop();
-      HAL_Delay(10);
-      i += 2;
-  }*/
-
-
   pca_write(pca_mode1, 0x0);
   pca_setfreq(hz);
   delay_ms(500);
@@ -221,8 +204,7 @@ void pca_init(float hz, uint8_t angle) {
   * @param[in]      num: servo num ; angle:Absolute Angle
   * @retval         none
   */
-void angle_write(uint8_t num, uint8_t angle) {
+void servo_angle_write(uint8_t num, uint8_t angle) {
   uint32_t off = (uint32_t) (158 + angle * 2.2);
   pca_setpwm(num, 1, off);
 }
-

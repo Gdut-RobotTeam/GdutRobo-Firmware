@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Firmware-clion"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Firmware-clion.elf">
+				<Option output="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Firmware-clion.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F103xE"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Support"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Algorithm"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Controler"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Inc"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Device/ST/STM32F1xx/Include"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1/arm-none-eabi"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1/backward"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/include"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/include-fixed"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 Firmware-clion.elf"/>
+					<CompileFile command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Firmware-clion.elf/fast">
+				<Option output="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Firmware-clion.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D__weak=__attribute__((weak))"/>
+					<Add option="-D__packed=__attribute__((__packed__))"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F103xE"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Support"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Algorithm"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Controler"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Inc"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Device/ST/STM32F1xx/Include"/>
+					<Add directory="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1/arm-none-eabi"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include/c++/9.3.1/backward"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/include"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/include-fixed"/>
+					<Add directory="e:\stm32cubemx\stm32cube\gnu-tools-arm-embedded\bin\../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 Firmware-clion.elf/fast"/>
+					<CompileFile command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/chassis.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/chassis.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/chassis_behavior.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/chassis_behavior.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/imu.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/imu.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/timer_it.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/timer_it.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/tracker.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Applications/tracker.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_buzzer.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_buzzer.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_delay.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_delay.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_imu.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_imu.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_led.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_led.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_motor.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_motor.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_servo_iic.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_servo_iic.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_uart4.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Bsp/bsp_uart4.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Controler/pid.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Controler/pid.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices/mpu6050.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices/mpu6050.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices/tracking_bar.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Devices/tracking_bar.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Support/retarget.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Support/retarget.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Components/Support/struct_typedef.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/STM32F103RCTx_FLASH.ld">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Src/main.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Src/stm32f1xx_hal_msp.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Src/stm32f1xx_it.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Src/syscalls.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/Src/system_stm32f1xx.c">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/startup/startup_stm32f103xe.s">
+			<Option target="Firmware-clion.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

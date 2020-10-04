@@ -153,8 +153,17 @@ int main(void)
 //	  } 
 //	  buzzer_off();
 //	  delay_ms(1000);
-	  printf("%d %d %d %d\r\n", read_encoder(2), read_encoder(3), read_encoder(4), read_encoder(5));
-	  delay_ms(20);
+	  for(int i = 0;i<=11;i++)
+	  {
+		angle_write(i,90);
+	  }
+	  delay_ms(1000);
+	  for(int i = 0;i<=11;i++)
+	  {
+		angle_write(i,0);
+	  }
+	  delay_ms(1000);
+	  
   }
   /* USER CODE END 3 */
 }

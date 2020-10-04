@@ -8,13 +8,18 @@
 #include "main.h"
 #define MOTOR_PWM_MAX 7000
 
-void motor_pwm_enable(void);
+typedef struct {
+  float speed_;
+  int encoder_;
+} motor_t;
 
-//motor: motor number
+extern void motor_pwm_enable(void);
+
+//motor_: motor_ number
 //pid_out: CCR MAX = 7200
 //Positive values lead to positive transitions and negative values are reversals
-void motor_set_pwm(uint8_t motor, int32_t pid_out);
+extern void motor_set_pwm(uint8_t motor, int32_t pid_out);
 
-int read_encoder(uint8_t TIMX);
+extern int read_encoder(uint8_t TIMX);
 
 #endif //FIRMWARE_CLION_BSP_BSP_MOTOR_H_

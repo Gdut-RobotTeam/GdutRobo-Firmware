@@ -1,0 +1,4 @@
+"E:\CLion\CLion 2019.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=E:/stm32cubemx/STM32Cube/GNU-Tools-ARM-Embedded/bin/arm-none-eabi-gcc.exe -DCMAKE_CXX_COMPILER=E:/stm32cubemx/STM32Cube/GNU-Tools-ARM-Embedded/bin/arm-none-eabi-g++.exe -G "CodeBlocks - MinGW Makefiles" C:\Users\ASUS\Desktop\GdutRobo-Firmware\Firmware-clion
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/ASUS/Desktop/GdutRobo-Firmware/Firmware-clion/cmake-build-debug

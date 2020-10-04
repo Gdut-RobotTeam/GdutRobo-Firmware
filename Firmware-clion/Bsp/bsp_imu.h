@@ -6,18 +6,9 @@
 #define FIRMWARE_CLION_BSP_BSP_IMU_H_
 #include "main.h"
 #include "string.h"
-
-struct Imu {
-  float yaw;
-  float roll;
-  float pitch;
-  float ax;
-  float ay;
-  float az;
-  float bias;
-};
+#include "mpu6050.h"
 
 extern void imu_receive_init();
-extern struct Imu imu;
+extern  mpu6050_buffer imu;
 
 #endif //FIRMWARE_CLION_BSP_BSP_IMU_H_

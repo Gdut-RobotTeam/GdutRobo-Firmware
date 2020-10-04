@@ -6,6 +6,7 @@
 #define FIRMWARE_CLION_BSP_BSP_SERVO_IIC_H_
 
 #include "main.h"
+#include "math.h"
 #include "bsp_delay.h"
 
 //pca9685
@@ -25,6 +26,6 @@
 #define jd180  520 //180 degrees ~ (4096)
 
 extern void pca_init(float hz,uint8_t angle);
-extern void angle_write(uint8_t num,uint8_t angle);//angle:Absolute Angle
+extern void servo_angle_write(uint8_t num,uint8_t angle);//angle:Absolute Angle
 
 #endif //FIRMWARE_CLION_BSP_BSP_SERVO_IIC_H_
