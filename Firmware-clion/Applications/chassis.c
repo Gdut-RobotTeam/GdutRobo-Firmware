@@ -7,10 +7,10 @@
 
 chassis_move_t chassis;
 static const float chassis_PID[CHASSIS_MOTOR_NUM][3] = {
-    {9, 3.2f, 0},
-    {9, 3.2f, 0},
-    {9, 3.2f, 0},
-    {9, 3.2f, 0}
+    {60, 15, 0},
+    {60, 15, 0},
+    {60, 15, 0},
+    {60, 15, 0}
 };
 
 void chassis_init() {
@@ -86,7 +86,8 @@ void chassis_ctrl_loop() {
   }
 
   for (int i = 0; i < 4; i++) {
-    int output = (int) PID_cal(&chassis.pid_[i], (float) chassis.motor_[i].encoder_, chassis.motor_[i].speed_);
+//    int output = (int) PID_cal(&chassis.pid_[i], (float) chassis.motor_[i].encoder_, chassis.motor_[i].speed_);
+    int output = (int) PID_cal(&chassis.pid_[i], chassis.motor_[i].encoder_, 100);
     motor_set_pwm(i + 1, output);
   }
 }

@@ -41,7 +41,7 @@ float PID_cal(pid_type_def *pid, float ref, float set) {
   pid->error_[2] = pid->error_[1];
   pid->error_[1] = pid->error_[0];
 
-  pid->error_[0] = set - ref;
+  pid->error_[0] = ref - set;
 
   if (pid->mode == PID_POSITION) {
     pid->Pout_ = pid->kp_ * pid->error_[0];
@@ -60,7 +60,7 @@ float PID_cal(pid_type_def *pid, float ref, float set) {
     pid->Dbuf_[1] = pid->Dbuf_[0];
     pid->Dbuf_[0] = (pid->error_[0] - 2.0f * pid->error_[1] + pid->error_[2]);
     pid->Dout_ = pid->kd_ * pid->Dbuf_[0];
-    pid->out_ = pid->Pout_ + pid->Iout_ + pid->Dout_;
+    pid->out_ += pid->Pout_ + pid->Iout_ + pid->Dout_;
     LimitMax(pid->out_, pid->max_out_);
   }
   return pid->out_;

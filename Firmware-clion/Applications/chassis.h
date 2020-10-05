@@ -29,6 +29,7 @@ typedef struct {
   motor_t motor_[CHASSIS_MOTOR_NUM];
   pid_type_def pid_[CHASSIS_MOTOR_NUM];
 } chassis_move_t;
+extern chassis_move_t chassis;
 
 extern void chassis_init();
 extern void chassis_ctrl_loop();
