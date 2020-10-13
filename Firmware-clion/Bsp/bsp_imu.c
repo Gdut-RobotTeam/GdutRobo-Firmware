@@ -28,8 +28,7 @@ void USART3_IRQHandler() {
 
     HAL_UART_DMAStop(&huart3);
     uint32_t temp = __HAL_DMA_GET_COUNTER(&hdma_usart3_rx);
-    imu_rx_len = BUFFER_SIZE
-    -temp;
+    imu_rx_len = BUFFER_SIZE - temp;
 
     mpu6050_decode(imu_rx_buf, &imu);
 

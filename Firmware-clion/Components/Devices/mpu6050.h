@@ -17,6 +17,7 @@ typedef struct {
   float ay_;
   float az_;
   float bias_;
+  float init_;
   bool on_off_;
   pid_type_def pid_;
 } mpu6050_buffer;

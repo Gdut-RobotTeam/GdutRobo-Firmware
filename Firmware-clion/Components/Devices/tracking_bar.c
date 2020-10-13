@@ -3,6 +3,7 @@
 //
 
 #include "tracking_bar.h"
+#include "bsp_delay.h"
 
 uint8_t tracking_bar_verify(const uint8_t *data) {
   uint8_t i = 0;
@@ -31,6 +32,10 @@ void tracking_bar_decode(const uint8_t *rx_buffer, line_grays *solved_buffer, co
     solved_buffer->value_ = tmp / solved_buffer->num_;
   else
     solved_buffer->value_ = 0;
+  if (solved_buffer->num_ >= 7)
+    solved_buffer->sign_ = 1;
+  else
+    solved_buffer->sign_ = 0;
 }
 
 void tracking_bar_inquiry(UART_HandleTypeDef *huart, uint8_t id) {

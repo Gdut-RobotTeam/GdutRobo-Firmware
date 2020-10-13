@@ -9,5 +9,6 @@
 #include "chassis.h"
 #include "tracking_bar.h"
 
+extern const uint32_t *get_systime_ptr();
 extern void timer6_init();
 #endif //FIRMWARE_CLION_APPLICATIONS_TIMER_IT_H_

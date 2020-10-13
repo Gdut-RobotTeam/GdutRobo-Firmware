@@ -24,10 +24,11 @@ void mpu6050_decode(const uint8_t *rx_buffer, mpu6050_buffer *solved_buffer) {
       if (rx_buffer[23] == 0x53) {
         solved_buffer->roll_ = 180.0 * (short) (rx_buffer[25] << 8 | rx_buffer[24]) / 32768.0;
         solved_buffer->pitch_ = 180.0 * (short) (rx_buffer[27] << 8 | rx_buffer[26]) / 32768.0;
-        solved_buffer->yaw_ = 180.0 * (short) (rx_buffer[29] << 8 | rx_buffer[28]) / 32768.0;
+        solved_buffer->yaw_ = 180.0 * (short) (rx_buffer[29] << 8 | rx_buffer[28]) / 32768.0 + solved_buffer->bias_
+            + solved_buffer->init_;
         if (solved_buffer->yaw_ > 360) solved_buffer->yaw_ -= 360;
         else if (solved_buffer->yaw_ < 0) solved_buffer->yaw_ += 360;
-        //printf("solved_buffer :%f  %f  %f\r\n", solved_buffer->roll_, solved_buffer->pitch_, solved_buffer->yaw_);
+//        printf("solved_buffer :%f  %f  %f\r\n", solved_buffer->roll_, solved_buffer->pitch_, solved_buffer->yaw_);
       }
     }
   }

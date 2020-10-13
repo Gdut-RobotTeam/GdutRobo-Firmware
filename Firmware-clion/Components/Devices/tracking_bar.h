@@ -14,6 +14,7 @@ typedef struct {
   float value_;
   uint8_t num_;
   uint8_t sign_;
+  uint8_t rec_sign_;
   bool on_off_;
   pid_type_def pid_;
 } line_grays;

@@ -34,7 +34,8 @@ extern chassis_move_t chassis;
 extern void chassis_init();
 extern void chassis_ctrl_loop();
 extern void chassis_odom_set(bool on_off);
-extern const odom_t *chassis_odom_get();
+extern const odom_t *get_odom_ptr();
+extern void chassis_odom_reset(uint8_t s);
 extern void chassis_yaw_set(float yaw_angle);
 extern void chassis_speed_set(float vx, float vy, float vw);
 

@@ -11,6 +11,7 @@
 extern line_grays forward_tracker;
 extern line_grays left_tracker;
 extern line_grays right_tracker;
+extern uint8_t inquiry_id;
 
 extern void uart4_receive_init();
 

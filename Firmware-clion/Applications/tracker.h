@@ -10,8 +10,6 @@
 #include "stdbool.h"
 
 void tracker_init();
-extern bool get_tracker_switch_state(const line_grays *tracker);
-extern void tracker_inquiry();
 extern float tracker_correct_val(line_grays *tracker, float target_pos_val);
 
 #endif //FIRMWARE_CLION_APPLICATIONS_TRACKER_H_
