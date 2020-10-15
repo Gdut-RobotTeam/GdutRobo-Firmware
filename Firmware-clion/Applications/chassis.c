@@ -102,10 +102,12 @@ void chassis_ctrl_loop() {
 
   float current_x_speed = (chassis.motor_[1].encoder_ - chassis.motor_[0].encoder_) * 1.4142 / 10;
   float current_y_speed = (chassis.motor_[3].encoder_ - chassis.motor_[0].encoder_) * 1.4142 / 10;
+  float current_z_speed = (chassis.motor_[0].encoder_ + chassis.motor_[2].encoder_) * CHASSIS_RADIUS / 10;
 
   if (chassis.odom_.on_off_ == true) {
     chassis.odom_.x_ += current_x_speed;
     chassis.odom_.y_ += current_y_speed;
+    chassis.odom_.z_ += current_z_speed;
   } else {
     chassis.odom_.x_ = 0;
     chassis.odom_.y_ = 0;
@@ -114,5 +116,4 @@ void chassis_ctrl_loop() {
     int output = (int) PID_cal(&chassis.pid_[i], (float) chassis.motor_[i].encoder_, chassis.motor_[i].speed_);
     motor_set_pwm(i + 1, output);
   }
-  printf("yaw:%f\r\n", imu.yaw_);
 }

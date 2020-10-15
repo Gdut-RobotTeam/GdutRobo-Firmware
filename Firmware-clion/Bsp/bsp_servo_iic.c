@@ -197,6 +197,7 @@ void pca_init(float hz, uint8_t angle) {
   pca_write(pca_mode1, 0x0);
   pca_setfreq(hz);
   delay_ms(500);
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1, GPIO_PIN_RESET);
 }
 
 /**

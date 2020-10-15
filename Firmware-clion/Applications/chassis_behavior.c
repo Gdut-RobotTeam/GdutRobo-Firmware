@@ -4,6 +4,7 @@
 
 #include "chassis_behavior.h"
 #include "timer_it.h"
+#include "bsp_buzzer.h"
 
 void move_by_encoder(const float distance_x,
                      const float distance_y,
@@ -186,10 +187,16 @@ void move_by_left_bar(uint8_t line_num, const int dir, const float vx_max, const
   }
 }
 
+void move_vy_relative() {
+
+}
+
 void turn_direction(uint8_t dir) {
   float target_angle = 0;
   imu.on_off_ = true;
   chassis_odom_set(false);
+  forward_tracker.on_off_ = false;
+  left_tracker.on_off_ = false;
 
   if (dir == 'n') target_angle = 90;
   if (dir == 's') target_angle = 270;
@@ -200,11 +207,17 @@ void turn_direction(uint8_t dir) {
 
   while (1) {
     float bias;
-    bias = imu.yaw_ - target_angle;
+    float current_yaw = imu.yaw_;
+    bias = current_yaw - target_angle;
     if (bias > 180) bias -= 360;
     else if (bias < -180) bias += 360;
     if (fabsf(bias) <= 0.5)break;
   }
-  delay_ms(200);
+
+  forward_tracker.on_off_ = true;
+  left_tracker.on_off_ = true;
+
+  buzzer_on();
+  imu.on_off_ = false;
 }
 

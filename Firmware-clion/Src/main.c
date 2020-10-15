@@ -144,13 +144,19 @@ int main(void) {
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  //  imu.on_off_ = true;
-//  chassis_yaw_set(0);
-//  move_by_encoder(1200, 2000, 100, 100, 6, 100);
-//  move_by_forward_bar(3, 1, 100, 6, 200);
+  imu.on_off_ = true;
+  chassis_yaw_set(0);
 
-  servo_angle_write(2, 0);
-  servo_angle_write(1, 0);
+  move_by_encoder(1200, 2000, 100, 100, 6, 100);
+  move_by_forward_bar(3, 1, 100, 6, 200);
+  delay_ms(800);
+  turn_direction('n');
+
+//  turn_direction('s');
+  delay_ms(3000);
+//  turn_direction('e');
+
+
 
   while (1) {
     /* USER CODE END WHILE */
