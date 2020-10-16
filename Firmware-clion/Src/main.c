@@ -32,6 +32,7 @@
 #include "timer_it.h"
 #include "chassis.h"
 #include "imu.h"
+#include "task.h"
 #include "chassis_behavior.h"
 /* USER CODE END Includes */
 
@@ -144,20 +145,9 @@ int main(void) {
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  imu.on_off_ = true;
-  chassis_yaw_set(0);
-
-  move_by_encoder(1200, 2000, 100, 100, 6, 100);
-  move_by_forward_bar(3, 1, 100, 6, 200);
-  delay_ms(800);
-  turn_direction('n');
-
-//  turn_direction('s');
-  delay_ms(3000);
-//  turn_direction('e');
-
-
-
+//  imu.on_off_ = true;
+//  chassis_yaw_set(0);
+//  move_by_left_bar(2, 1, 60, 6, 150);
   while (1) {
     /* USER CODE END WHILE */
 

@@ -102,7 +102,8 @@ void chassis_ctrl_loop() {
 
   float current_x_speed = (chassis.motor_[1].encoder_ - chassis.motor_[0].encoder_) * 1.4142 / 10;
   float current_y_speed = (chassis.motor_[3].encoder_ - chassis.motor_[0].encoder_) * 1.4142 / 10;
-  float current_z_speed = (chassis.motor_[0].encoder_ + chassis.motor_[2].encoder_) * CHASSIS_RADIUS / 10;
+  float current_z_speed = (chassis.motor_[0].encoder_ + chassis.motor_[1].encoder_ + chassis.motor_[2].encoder_
+      + chassis.motor_[3].encoder_) / 4;
 
   if (chassis.odom_.on_off_ == true) {
     chassis.odom_.x_ += current_x_speed;

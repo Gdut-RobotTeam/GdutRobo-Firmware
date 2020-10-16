@@ -32,7 +32,7 @@ void tracking_bar_decode(const uint8_t *rx_buffer, line_grays *solved_buffer, co
     solved_buffer->value_ = tmp / solved_buffer->num_;
   else
     solved_buffer->value_ = 0;
-  if (solved_buffer->num_ >= 7)
+  if (solved_buffer->num_ >= 5)
     solved_buffer->sign_ = 1;
   else
     solved_buffer->sign_ = 0;
